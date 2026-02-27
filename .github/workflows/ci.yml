@@ -16,6 +16,7 @@ jobs:
 
       - name: Build and run tests
         run: |
+          cp .env.example .env
           echo "UID=1000" >> .env
           echo "GID=1000" >> .env
           docker compose -f infra/compose/docker-compose.yml --env-file .env up -d --build
